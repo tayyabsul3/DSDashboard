@@ -68,6 +68,9 @@
   }
 }
 
+body {
+  background-color: rgb(20, 20, 58);
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -87,7 +90,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5); /* Color of the scrollbar thumb */
+  background: rgba(43, 53, 102, 1); /* Color of the scrollbar thumb */
   border-radius: 10px; /* Roundness of the scrollbar thumb */
   border: 1px solid transparent; /* Border around the scrollbar thumb */
 }
@@ -95,11 +98,14 @@
 /* For Firefox */
 * {
   scrollbar-width: thin; /* Options: auto, thin, none */
-  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Color of the scrollbar thumb and track */
+  scrollbar-color: rgba(43, 53, 102, 1) transparent; /* Color of the scrollbar thumb and track */
 }
 
+.linear_g_2 {
+  background-color: rgb(20, 20, 58);
+}
 .linear_g_1 {
-  background: linear-gradient(91.87deg, #312f62 1.77%, #4d4a97 98.62%);
+  background: rgba(17, 28, 68, 1);
 }
 .sidebar_not_active {
   background-color: none;
@@ -115,12 +121,26 @@
     rgba(255, 255, 255, 0.8848039215686274) 100%
   );
 }
+
+.sideANDheaderbg {
+  background: rgba(17, 28, 68, 1);
+}
 .nav_btn_bg {
-  background: rgba(12, 26, 95, 1);
+  background: rgba(43, 53, 102, 1);
+}
+.nav_btn_bg_2 {
+  background: rgba(43, 53, 102, 1);
+}
+.dascard_icon_bg {
+  background: rgba(177, 190, 255, 0.46);
 }
 .main > .header {
-  background: rgba(49, 47, 98, 1);
+  background: rgba(17, 28, 68, 1);
 }
 .notification {
-  background: linear-gradient(136.67deg, #ff409a 8.34%, #c438ef 95.26%);
+  background: rgba(27, 37, 75, 1);
+}
+
+.recharts-cartesian-axis-ticks {
+  color: white;
 }

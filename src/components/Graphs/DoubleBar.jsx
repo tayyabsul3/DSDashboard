@@ -52,6 +52,19 @@ export function DoubleBar() {
               </linearGradient>
             </defs>
             <CartesianGrid vertical={false} />
+            <YAxis
+              dataKey="desktop"
+              type="number"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+              stroke="#ffffff"
+              label={{
+                style: {
+                  colors: "#fffff",
+                },
+              }}
+            />
             <XAxis
               dataKey="month"
               tickLine={false}

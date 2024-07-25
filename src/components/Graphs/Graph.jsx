@@ -1,5 +1,12 @@
 import { TrendingUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  LabelList,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 import {
   Card,
@@ -33,22 +40,19 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "#ffffff",
+    color: "black",
   },
   mobile: {
     label: "Mobile",
-    color: "#ffffff",
+    color: "white",
   },
 };
 
 export function Graph() {
   return (
-    <Card
-      className="w-full border-[1px] border-blue-600 rounded-3xl bg-blue-900 text-white"
-      style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-    >
+    <Card className="w-full border-none linear_g_1  rounded-3xl bg-blue-900 text-white">
       <CardHeader>
-        <CardTitle>Files in time</CardTitle>
+        <CardTitle className="text-xl font-normal">Files in time</CardTitle>
       </CardHeader>
       <CardContent>
         <ChartContainer
@@ -90,10 +94,11 @@ export function Graph() {
             <YAxis
               tickMargin={8}
               tickLine={false}
-              tickCount={5}
+              tickCount={6}
               domain={[0, 600]}
               tick={{ fill: "white" }} // Change Y-axis label color
             />
+            <LabelList className="fill-white" />
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <Area
               dataKey="mobile"

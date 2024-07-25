@@ -37,10 +37,7 @@ const chartData = [
 
 export function Graphlogs() {
   return (
-    <Card
-      className="w-full border-[1px] border-blue-600 rounded-3xl bg-blue-900 text-white"
-      style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-    >
+    <Card className="linear_g_1 w-full border-none rounded-3xl bg-blue-900 text-white">
       <CardHeader>
         <CardTitle>Logs</CardTitle>
       </CardHeader>
