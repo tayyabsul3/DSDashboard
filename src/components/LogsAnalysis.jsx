@@ -9,11 +9,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-const LogsComponent = () => {
+import { GraphofLA } from "./Graphs/GraphofLA";
+const LogsAnalysis = () => {
   return (
     <div className="body py-5 px-16 flex flex-col gap-5 h-[85vh] overflow-y-auto">
-      <h1 className="text-white text-3xl  mt-5">Logs</h1>
-      <div className="linear_g_1 flex justify-between rounded-2xl py-5 text-white">
+      <h1 className="text-white text-3xl  mt-5">Logs Analysis</h1>
+      {/* <div className="linear_g_1 flex justify-between rounded-2xl py-5 text-white">
         <div className="total flex-[0.3] flex flex-col justify-center items-center">
           <h2 className="text-xl">Total</h2>
           <h1 className="text-2xl text-blue-400">2345678</h1>
@@ -30,10 +31,11 @@ const LogsComponent = () => {
           <h2 className="text-xl">Authentication Success</h2>
           <h1 className="text-2xl text-blue-400">51</h1>
         </div>
-      </div>
-      <div className="graphs flex gap-5">
-        <div className="flex-[0.7]">
-          <Graphlogs />
+      </div> */}
+      <div className="graphs flex flex-col gap-5">
+        <div className="flex-1">
+          {/* <Graphlogs /> */}
+          <GraphofLA />
         </div>
         <div className="linear_g_1 logs flex-[0.3] p-5 rounded-2xl text-white flex flex-col gap-5">
           <h1 className="text-3xl m-10 px-5">Average logs per hour</h1>
@@ -111,4 +113,4 @@ const LogsComponent = () => {
   );
 };
 
-export default LogsComponent;
+export default LogsAnalysis;

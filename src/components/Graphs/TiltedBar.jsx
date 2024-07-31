@@ -46,7 +46,13 @@ export function TiltedBar() {
                 <stop offset="100%" stopColor="#D0A0FF" />
               </linearGradient>
             </defs>
-            <XAxis type="number" dataKey="desktop" hide />
+            <XAxis
+              axisLine={false}
+              type="number"
+              dataKey="desktop"
+              tickLine={false}
+              tickCount={10}
+            />
             <YAxis
               dataKey="month"
               type="category"

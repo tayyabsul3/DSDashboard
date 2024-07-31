@@ -1,60 +1,52 @@
 "use client";
 
-import * as React from "react";
-import { TrendingUp } from "lucide-react";
-import { Label, Pie, PieChart } from "recharts";
+import {
+  Label,
+  PolarGrid,
+  PolarRadiusAxis,
+  RadialBar,
+  RadialBarChart,
+} from "recharts";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChartContainer } from "@/components/ui/chart";
 
 const chartData = [
-  { browser: "chrome", visitors: 20, fill: "#959dce" },
-  { browser: "other", visitors: 80, fill: " rgba(124, 142, 239, 1)" },
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
 ];
 
-const chartConfig = {
-  visitors: {
-    label: "",
-  },
-};
-
-export function Donut() {
-  const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
-  }, []);
-
+export function Donut({ radialColor, percentage }) {
+  const chartConfig = {
+    visitors: {
+      label: "Visitors",
+    },
+    safari: {
+      label: "Safari",
+      color: radialColor,
+    },
+  };
   return (
-    <Card className="flex flex-col bg-transparent outline-none border-none text-white">
-      <CardContent className="p-0">
+    <Card className="flex flex-col bg-transparent border-none w-[10rem] text-white">
+      <CardContent className=" pb-0">
         <ChartContainer
           config={chartConfig}
-          className=" aspect-square h-[100px] w-[100px]"
+          className="mx-auto aspect-square max-h-[250px] fill-white"
         >
-          <PieChart>
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
+          <RadialBarChart
+            data={chartData}
+            startAngle={0}
+            endAngle={percentage * 3.6}
+            innerRadius={35}
+            outerRadius={65}
+          >
+            <PolarGrid
+              gridType="circle"
+              radialLines={false}
+              stroke="none"
+              className="fill-transparent"
             />
-            <Pie
-              data={chartData}
-              dataKey="visitors"
-              nameKey="browser"
-              innerRadius={20}
-              outerRadius={30}
-              className="text-white"
-              strokeWidth={5}
-            >
+            <RadialBar dataKey="visitors" background cornerRadius={15} />
+            <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
               <Label
                 content={({ viewBox }) => {
                   if (viewBox && "cx" in viewBox && "cy" in viewBox) {
@@ -64,29 +56,21 @@ export function Donut() {
                         y={viewBox.cy}
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="text-white"
-                        style={{ color: "white" }}
                       >
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          fill="white"
-                          className=" fill-white  text-[12px] font-bold " // Reduced size
+                          className="fill-white text-xl bg-red-50"
                         >
-                          80%
+                          {percentage}%
                         </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
-                        ></tspan>
                       </text>
                     );
                   }
                 }}
               />
-            </Pie>
-          </PieChart>
+            </PolarRadiusAxis>
+          </RadialBarChart>
         </ChartContainer>
       </CardContent>
     </Card>
