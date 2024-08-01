@@ -11,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { GoKebabHorizontal } from "react-icons/go";
 
 const data = [
   {
@@ -51,11 +52,11 @@ const data = [
 ];
 const DataSecurity = () => {
   return (
-    <div className="transition-all duration-300 ease-in-out body py-5 px-16 flex flex-col gap-5 h-[85vh] overflow-y-auto">
-      <h1 className="text-white text-3xl  tracking-wide">Data Security</h1>
+    <div className="transition-all duration-300 ease-in-out  py-5 px-16 flex flex-col gap-5 h-[85vh] overflow-y-auto">
+      <h1 className="text-white text-3xl mt-5">Data Security</h1>
       <div className="flex flex-col gap-5">
         {/* cards */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-5">
           <Securitycard />
           <Securitycard />
           <Securitycard />
@@ -65,10 +66,7 @@ const DataSecurity = () => {
         {/* graphs */}
         <div className="flex gap-5 w-full flex-col">
           <div className="flex gap-5 w-full">
-            <div
-              className="graph1 flex-[0.5] h-[500px] outline-none border-none rounded-2xl"
-              style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-            >
+            <div className="graph1 linear_g_1 flex-[0.5] h-[500px] outline-none border-none rounded-2xl">
               <div className="top flex justify-between items-center text-white text-2xl my-6 px-10">
                 <h1>Files in time</h1>
                 <div className="colors flex gap-4 items-center">
@@ -106,10 +104,7 @@ const DataSecurity = () => {
               </div>
               <DoubleBar />
             </div>
-            <div
-              className="graph1 flex-[0.5] h-[500px] outline-none border-none rounded-2xl"
-              style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-            >
+            <div className="graph1 linear_g_1 flex-[0.5] h-[500px] outline-none border-none rounded-2xl">
               <div className="top flex justify-between items-center text-white text-2xl my-7 px-10">
                 <h1>Files in time</h1>
                 <div className="colors flex gap-4 items-center pl-28">
@@ -122,20 +117,19 @@ const DataSecurity = () => {
                     <p className="text-sm text-gray-400 ">Untrusted</p>
                   </div>
                 </div>
-                <Menu />
+                <GoKebabHorizontal style={{ transform: "rotate(90deg)" }} />
               </div>
               <TiltedBar />
             </div>
           </div>
           <div>
             <div className="flex gap-5 w-full">
-              <div
-                className="table1 flex-[0.3] h-full text-white p-5 pb-10  outline-none border-none rounded-2xl"
-                style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-              >
+              <div className="table1 linear_g_1 flex-[0.3] h-full text-white p-8  outline-none border-none rounded-2xl">
                 <div className="top flex justify-between mb-5">
-                  <h1 className="text-2xl">Events per user</h1>
-                  <Menu />
+                  <h1 className="text-xl mb-2">Events per user</h1>
+                  <GoKebabHorizontal
+                    style={{ transform: "rotate(90deg)" }}
+                  />{" "}
                 </div>
                 <div className="tables flex flex-col gap-3">
                   <div className="row flex justify-between items-center border-b-2 border-b-gray-600 pb-2">
@@ -212,10 +206,7 @@ const DataSecurity = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className="table2 flex-[0.7] p-5  outline-none border-none rounded-2xl"
-                style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-              >
+              <div className="table2 linear_g_1 flex-[0.7] p-8  outline-none border-none rounded-2xl">
                 <Table className="text-white">
                   <TableHeader>
                     <TableRow className=" hover:bg-transparent">

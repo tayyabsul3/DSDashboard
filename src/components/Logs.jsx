@@ -4,7 +4,6 @@ import { DonutofLogs } from "./Graphs/DonutLogs";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -13,11 +12,8 @@ import {
 const LogsComponent = () => {
   return (
     <div className="body py-5 px-16 flex flex-col gap-5 h-[85vh] overflow-y-auto">
-      <h1 className="text-white text-2xl  tracking-wide">Logs</h1>
-      <div
-        className="flex justify-between rounded-2xl py-5 text-white"
-        style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-      >
+      <h1 className="text-white text-3xl  mt-5">Logs</h1>
+      <div className="linear_g_1 flex justify-between rounded-2xl py-5 text-white">
         <div className="total flex-[0.3] flex flex-col justify-center items-center">
           <h2 className="text-xl">Total</h2>
           <h1 className="text-2xl text-blue-400">2345678</h1>
@@ -39,10 +35,7 @@ const LogsComponent = () => {
         <div className="flex-[0.7]">
           <Graphlogs />
         </div>
-        <div
-          className="logs flex-[0.3] p-5 rounded-2xl text-white flex flex-col gap-5"
-          style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-        >
+        <div className="linear_g_1 logs flex-[0.3] p-5 rounded-2xl text-white flex flex-col gap-5">
           <h1 className="text-3xl m-10 px-5">Average logs per hour</h1>
           <div className="bottom flex justify-around items-center px-10">
             <div className="left">
@@ -55,10 +48,7 @@ const LogsComponent = () => {
           </div>
         </div>
       </div>
-      <div
-        className="table p-5 rounded-2xl "
-        style={{ backgroundColor: "rgba(55, 52, 111, 1)" }}
-      >
+      <div className="linear_g_1 table p-5 rounded-2xl ">
         <Table className="text-white">
           <TableHeader>
             <TableRow>

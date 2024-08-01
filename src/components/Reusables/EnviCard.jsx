@@ -1,9 +1,9 @@
-import { LockIcon, MenuIcon } from "lucide-react";
+import { LockIcon } from "lucide-react";
 import React from "react";
-
+import { PiGreaterThan } from "react-icons/pi";
 const EnviCard = () => {
   return (
-    <div className="card text-white border-[1px] border-blue-600 rounded-2xl p-4 flex flex-col w-fit">
+    <div className="card text-gray-300 rounded-2xl p-4 flex flex-col w-fit bg-blue-950">
       <div className="top flex  items-center justify-between ">
         <div className="flex items-center gap-5 ">
           <div className="icon bg-indigo-400 h-fit rounded-xl p-2 ">
@@ -11,7 +11,7 @@ const EnviCard = () => {
           </div>
           <h1 className="text-white text-[16px]">Hight-risk events</h1>
         </div>
-        <MenuIcon />
+        <PiGreaterThan className=" font-bold" />
       </div>
       <p className="text-sm w-[90%] py-2">
         Activate Email notifications for risky events to be informed
